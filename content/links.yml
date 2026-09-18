@@ -47,10 +47,10 @@
   tone: sage
   external: true
 
-- label: for fun
-  kind: Personal
+- label: Trips
+  kind: personal
   href: /personal
-  description: ''
+  description: Short Description line
   span: 12
   tone: forest
   external: false
