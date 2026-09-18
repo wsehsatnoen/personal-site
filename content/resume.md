@@ -1,6 +1,6 @@
 # Shane Darilek
  
-**Supply Chain Operations & Systems Development**
+**eCommerce Supply Chain Operations & Systems Development**
  
 Austin, TX
  
@@ -12,7 +12,6 @@ Austin, TX
  
 **Sam Houston State University** — B.A., Music, minor Biology, Cum Laude | 2022
 
----
  
 ## PROFESSIONAL EXPERIENCE
  
@@ -33,8 +32,6 @@ Austin, TX
 **Service Lead / Cash Controller Specialist** — H-E-B #728 Huntsville, #425 Austin | April 2019 – February 2024
 - Directed daily sales floor operations and managed a team of more than 40 partners across two markets. Coached on SOPs, point-of-sale efficiency, and customer service, improving Items per Minute (IPM) performance by 16% and hospitality scoring by 20%.
 - Oversaw store-level cash flow, consolidating and verifying financial data and investigating discrepancies to maintain accuracy and accountability.
-
----
  
 ## PROJECTS
  
@@ -44,7 +41,6 @@ Austin, TX
 
 **E-Commerce Backend Service** — Java, Spring Boot, Maven | github.com/wsehsatnoen/ecommerceapp
 - Built a Spring Boot backend serving a storefront front end, exposing [N] REST endpoints for [products, orders, customers], with [persistence layer and validation].
----
 
 ## CORE COMPETENCIES
  
@@ -55,5 +51,3 @@ Austin, TX
 **Engineering & Data:** REST API design, relational database design, transaction-level data modeling, Docker, Git, Linux, advanced Excel
  
 **Certifications:** ITIL Foundations (Axelos), LPI Linux Essentials
- 
----
