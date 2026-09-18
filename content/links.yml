@@ -1,0 +1,57 @@
+# The cards on the homepage. Add, remove or reorder freely.
+#
+# span     how many of the 12 grid columns the card takes: 3 to 12.
+#          Keep the numbers in a row adding up to 12, and avoid making
+#          every card the same width -- the uneven rhythm is the design.
+# tone     chalk | forest | camel | sage | olive
+# kind     the small label above the title. Lowercase, one or two words.
+# external true opens in a new tab and shows the outbound mark.
+
+- label: Portfolio
+  kind: work
+  href: /portfolio
+  description: Short description line
+  span: 8
+  tone: forest
+  external: false
+
+- label: About
+  kind: background
+  href: /about
+  description: Short description line
+  span: 4
+  tone: chalk
+  external: false
+
+- label: Resume
+  kind: document
+  href: /resume
+  description: ''
+  span: 5
+  tone: camel
+  external: false
+
+- label: GitHub
+  kind: code
+  href: https://github.com/wsehsatnoen
+  description: ''
+  span: 3
+  tone: chalk
+  external: true
+
+- label: LinkedIn
+  kind: network
+  href: https://www.linkedin.com/in/swdarilek
+  description: ''
+  span: 4
+  tone: sage
+  external: true
+
+- label: for fun
+  kind: Personal
+  href: /personal
+  description: ''
+  span: 12
+  tone: forest
+  external: false
+

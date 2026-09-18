@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    image: personal-site:latest
+    container_name: personal-site
+    restart: unless-stopped
+    env_file: .env
+    expose:
+      - '3000'
+    volumes:
+      # Edit anything under ./content on the Pi, then:
+      #   docker compose restart app
+      # No rebuild needed for content changes.
+      - ./content:/app/content:ro
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: personal-site-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    depends_on:
+      - app

@@ -1,0 +1,679 @@
+/* ---------------------------------------------------------------
+   Design tokens. Change a value here and it changes everywhere.
+   --------------------------------------------------------------- */
+:root {
+  --linen: #eae6db;
+  --chalk: #f5f2ea;
+  --stone: #d2cbba;
+  --lichen: #5e6b58;
+  --forest: #22352b;
+  --sage: #9bafa6;
+  --camel: #c3a97c;
+  --brass: #b08d4f;
+
+  /* Olive has three jobs and three values so every one of them stays
+     legible: a mark, a filled surface, and text on a light ground. */
+  --olive: #77872c;
+  --olive-deep: #66751f;
+  --olive-ink: #5e6b1d;
+
+  --radius-card: 8px;
+  --radius-control: 4px;
+  --rule: 1px solid var(--stone);
+
+  --gap: 0.8125rem;
+  --measure: 62ch;
+
+  --font-serif: var(--font-newsreader), Georgia, 'Times New Roman', serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--linen);
+  color: var(--forest);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.6;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+h1 { font-size: clamp(2.25rem, 1.6rem + 2.6vw, 2.9rem); }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: inherit; }
+
+img { max-width: 100%; height: auto; }
+
+:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  background: var(--forest);
+  color: var(--linen);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-control);
+}
+
+/* ---------------------------------------------------------------
+   Layout
+   --------------------------------------------------------------- */
+.wrap {
+  width: min(1100px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gap);
+}
+
+/* ---------------------------------------------------------------
+   Header and footer
+   --------------------------------------------------------------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.75rem 0 1.25rem;
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.nav a {
+  color: var(--lichen);
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav a:hover {
+  color: var(--forest);
+}
+
+.nav a[aria-current='page'] {
+  color: var(--forest);
+  border-bottom-color: var(--brass);
+}
+
+.site-footer {
+  border-top: var(--rule);
+  padding: 1.25rem 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--lichen);
+}
+
+.site-footer a {
+  color: var(--lichen);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--forest);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.35rem;
+}
+
+/* ---------------------------------------------------------------
+   Page intro
+   --------------------------------------------------------------- */
+.intro {
+  padding: 3.5rem 0 3rem;
+  max-width: 34rem;
+}
+
+.intro--home {
+  padding: 5rem 0 4rem;
+}
+
+.intro p {
+  color: var(--lichen);
+  margin-top: 1rem;
+  font-size: 1.0625rem;
+}
+
+/* ---------------------------------------------------------------
+   Cards. Flat, bordered, never shadowed. Tone sets the surface;
+   each tone carries its own border, text and muted-text colour so
+   the card reads as a material sample rather than a container.
+   --------------------------------------------------------------- */
+.card {
+  --card-bg: var(--chalk);
+  --card-border: var(--stone);
+  --card-text: var(--forest);
+  --card-muted: var(--lichen);
+
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  color: var(--card-text);
+  padding: 1.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  grid-column: span var(--span, 4);
+}
+
+.card[data-tone='forest'] {
+  --card-bg: var(--forest);
+  --card-border: #35493d;
+  --card-text: var(--linen);
+  --card-muted: var(--sage);
+}
+
+.card[data-tone='camel'] {
+  --card-bg: var(--camel);
+  --card-border: #ad9264;
+  --card-text: var(--forest);
+  --card-muted: #4a3c22;
+}
+
+.card[data-tone='sage'] {
+  --card-bg: var(--sage);
+  --card-border: #85998f;
+  --card-text: var(--forest);
+  --card-muted: #2c443a;
+}
+
+.card[data-tone='olive'] {
+  --card-bg: var(--olive-deep);
+  --card-border: #55621a;
+  --card-text: #f7f9ec;
+  --card-muted: #e8efd2;
+}
+
+.card__kind {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--card-muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.card__title {
+  display: block;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.card__desc {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--card-muted);
+  margin: 0.35rem 0 0;
+}
+
+.card__body {
+  display: block;
+  margin-top: auto;
+}
+
+/* The full-width row card reads left to right instead of top to bottom:
+   label and title lead, description sits opposite. */
+.card__lead {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+}
+
+.card--row .card__desc {
+  margin: 0;
+  text-align: right;
+}
+
+.card--row .card__title {
+  font-size: 1.3rem;
+}
+
+/* Link cards get the whole surface as the hit area. */
+a.card {
+  text-decoration: none;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+a.card:hover {
+  --card-border: var(--olive);
+}
+
+a.card[data-tone='chalk']:hover {
+  --card-bg: #fbf9f3;
+}
+
+.card--tall {
+  min-height: 8.25rem;
+}
+
+.card--row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.card--empty {
+  background: transparent;
+  border-style: dashed;
+  align-items: center;
+  justify-content: center;
+  min-height: 6rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--lichen);
+  text-align: center;
+}
+
+.outbound {
+  font-family: var(--font-mono);
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+/* ---------------------------------------------------------------
+   Tags, section headings, links
+   --------------------------------------------------------------- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tags li {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 0.125rem 0.5rem;
+  color: var(--card-muted, var(--lichen));
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2.5rem 0 1.25rem;
+}
+
+.text-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--olive-ink);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.text-link:hover {
+  color: var(--forest);
+}
+
+.meta-list {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+.meta-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.meta-list > div:last-child {
+  border-bottom: 0;
+}
+
+.meta-list dt {
+  color: var(--card-muted);
+}
+
+.meta-list dd {
+  margin: 0;
+  text-align: right;
+}
+
+/* ---------------------------------------------------------------
+   Buttons and form controls
+   --------------------------------------------------------------- */
+.button {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  padding: 0.6rem 1.35rem;
+  border-radius: var(--radius-control);
+  border: 1px solid transparent;
+  background: var(--olive-deep);
+  color: #f7f9ec;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--olive-ink);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.field {
+  display: block;
+  margin-bottom: 0.875rem;
+}
+
+.field > span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--card-muted);
+  margin-bottom: 0.35rem;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--forest);
+  background: var(--chalk);
+  border: 1px solid var(--stone);
+  border-radius: var(--radius-control);
+  padding: 0.55rem 0.7rem;
+}
+
+.field textarea {
+  min-height: 7.5rem;
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+/* Honeypot. Present in the DOM, never shown, never focusable. */
+.trap {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.form-status {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  margin-top: 0.875rem;
+}
+
+.form-status[data-state='sent'] {
+  color: var(--card-muted);
+}
+
+.form-status[data-state='error'] {
+  color: #e8c9a0;
+}
+
+/* ---------------------------------------------------------------
+   Case study prose
+   --------------------------------------------------------------- */
+.prose {
+  max-width: var(--measure);
+}
+
+.prose h2 {
+  margin: 2.25rem 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.prose h3 {
+  margin: 1.75rem 0 0.5rem;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.1rem;
+  margin: 0 0 1em;
+}
+
+.prose li {
+  margin-bottom: 0.35rem;
+}
+
+.prose a {
+  color: var(--olive-ink);
+  text-underline-offset: 3px;
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--chalk);
+  border: 1px solid var(--stone);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+
+.prose pre {
+  background: var(--forest);
+  color: var(--linen);
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-card);
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.prose blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--brass);
+  color: var(--lichen);
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------------
+   Narrow screens: the composition collapses to one column.
+   --------------------------------------------------------------- */
+@media (max-width: 820px) {
+  .card {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 560px) {
+  .wrap {
+    width: min(1100px, 100% - 2rem);
+  }
+  .intro--home {
+    padding: 3.25rem 0 2.75rem;
+  }
+  .card--row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Resume. Same prose engine, tighter rhythm, and the line directly
+   under a role heading is treated as the organisation-and-dates
+   meta line so the Markdown stays plain.
+   --------------------------------------------------------------- */
+.resume {
+  max-width: 48rem;
+}
+
+.resume h2 {
+  margin: 2.75rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: var(--rule);
+  font-size: 1.2rem;
+}
+
+.resume h2:first-child {
+  margin-top: 0;
+}
+
+.resume h3 {
+  margin: 1.5rem 0 0.15rem;
+  font-size: 1.05rem;
+}
+
+.resume h3 + p {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--lichen);
+  margin-bottom: 0.6rem;
+}
+
+.resume ul {
+  margin-bottom: 0.9rem;
+}
+
+.resume li {
+  margin-bottom: 0.2rem;
+}
+
+/* ---------------------------------------------------------------
+   Print. Anyone who wants the resume as a PDF can use the browser's
+   own print dialogue, so the page has to survive it.
+   --------------------------------------------------------------- */
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  main {
+    padding-bottom: 0;
+  }
+
+  .wrap {
+    width: 100%;
+  }
+
+  .intro {
+    padding: 0 0 1.5rem;
+  }
+
+  .resume {
+    max-width: none;
+  }
+
+  .resume h2,
+  .resume h3 {
+    break-after: avoid;
+  }
+
+  .resume li,
+  .resume h3 + p {
+    break-inside: avoid;
+  }
+
+  .resume h3 + p {
+    color: #444;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
