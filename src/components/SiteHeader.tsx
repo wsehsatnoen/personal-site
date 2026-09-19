@@ -7,8 +7,7 @@ const NAV = [
   { href: '/', label: 'home' },
   { href: '/about', label: 'about' },
   { href: '/resume', label: 'resume'},
-  { href: '/portfolio', label: 'portfolio' },
-  { href: '/contact', label: 'contact' }
+  { href: '/portfolio', label: 'portfolio' }
 ];
 
 export default function SiteHeader({ name }: { name: string }) {
