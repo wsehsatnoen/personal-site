@@ -11,6 +11,11 @@
   --camel: #c3a97c;
   --brass: #b08d4f;
 
+  /* Iron oxide. Deep and brown rather than orange, so it sits with brass
+     and camel instead of turning the linen ground terracotta. */
+  --oxide: #8a3b2e;
+  --oxide-deep: #6f2f24;
+
   /* Olive has three jobs and three values so every one of them stays
      legible: a mark, a filled surface, and text on a light ground. */
   --olive: #77872c;
@@ -135,6 +140,7 @@ main {
 
 .nav {
   display: flex;
+  align-items: center;
   gap: 1.35rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -154,6 +160,21 @@ main {
 .nav a[aria-current='page'] {
   color: var(--forest);
   border-bottom-color: var(--brass);
+}
+
+/* A nav item that leaves the site entirely, rather than being one of its
+   pages. Oxide keeps olive free to mean what it means everywhere else. */
+.nav a.nav__cta {
+  color: var(--chalk);
+  background: var(--oxide);
+  border-bottom: 0;
+  border-radius: var(--radius-control);
+  padding: 0.28rem 0.7rem;
+}
+
+.nav a.nav__cta:hover {
+  color: var(--chalk);
+  background: var(--oxide-deep);
 }
 
 .site-footer {

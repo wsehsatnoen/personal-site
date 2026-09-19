@@ -3,11 +3,18 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const NAV = [
-  { href: '/', label: 'home' },
+type NavItem = {
+  href: string;
+  label: string;
+  external?: boolean;
+  cta?: boolean;
+};
+
+const NAV: NavItem[] = [
+  { href: 'https://sso.wsehsatnoen.xyz', label: 'sso', external: true, cta: true },
   { href: '/about', label: 'about' },
-  { href: '/resume', label: 'resume'},
-  { href: '/portfolio', label: 'portfolio' }
+  { href: '/resume', label: 'resume' },
+  { href: '/portfolio', label: 'portfolio' },
 ];
 
 export default function SiteHeader({ name }: { name: string }) {
@@ -19,10 +26,32 @@ export default function SiteHeader({ name }: { name: string }) {
         {name}
       </Link>
       <nav className="nav" aria-label="Primary">
-        {NAV.map(({ href, label }) => {
-          const active = href === '/' ? pathname === '/' : pathname.startsWith(href);
+        {NAV.map(({ href, label, external, cta }) => {
+          const className = cta ? 'nav__cta' : undefined;
+
+          if (external) {
+            return (
+              <a
+                key={href}
+                href={href}
+                className={className}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                {label}
+              </a>
+            );
+          }
+
+          const active = pathname === href || pathname.startsWith(`${href}/`);
+
           return (
-            <Link key={href} href={href} aria-current={active ? 'page' : undefined}>
+            <Link
+              key={href}
+              href={href}
+              className={className}
+              aria-current={active ? 'page' : undefined}
+            >
               {label}
             </Link>
           );
