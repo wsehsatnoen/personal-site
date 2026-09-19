@@ -10,7 +10,7 @@
 - label: Portfolio
   kind: work
   href: /portfolio
-  description: Short description line
+  description: ''
   span: 8
   tone: forest
   external: false
@@ -18,7 +18,7 @@
 - label: About
   kind: background
   href: /about
-  description: Short description line
+  description: ''
   span: 4
   tone: chalk
   external: false
@@ -50,7 +50,7 @@
 - label: Trips
   kind: personal
   href: /personal
-  description: Short Description line
+  description: ''
   span: 12
   tone: forest
   external: false
