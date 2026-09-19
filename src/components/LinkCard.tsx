@@ -4,7 +4,7 @@ import type { LinkCard as LinkCardData } from '@/lib/content';
 /* One destination on the homepage. Span and tone come straight from
    content/links.yml, so the composition is editable without touching JSX. */
 export default function LinkCard({ card }: { card: LinkCardData }) {
-  const isRow = card.span === 12;
+  const isRow = card.span >= 5;
   const className = ['card', isRow ? 'card--row' : 'card--tall'].join(' ');
   const style = { '--span': card.span } as React.CSSProperties;
 

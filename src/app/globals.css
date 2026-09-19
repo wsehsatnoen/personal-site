@@ -17,6 +17,7 @@
   --olive-deep: #66751f;
   --olive-ink: #5e6b1d;
 
+  --card-min: 8.25rem;
   --radius-card: 8px;
   --radius-control: 4px;
   --rule: 1px solid var(--stone);
@@ -285,7 +286,7 @@ main {
 .card__lead {
   display: flex;
   align-items: baseline;
-  gap: 1.1rem;
+  gap: .75rem;
 }
 
 .card--row .card__desc {
@@ -312,7 +313,7 @@ a.card[data-tone='chalk']:hover {
 }
 
 .card--tall {
-  min-height: 8.25rem;
+  min-height: var(--card-min);
 }
 
 .card--row {
@@ -565,6 +566,40 @@ a.card[data-tone='chalk']:hover {
   .card {
     grid-column: span 12;
   }
+
+  /* The full-width card stops reading left to right at the same width
+     every other card goes full-width, so the two never disagree. */
+  .card--row {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: var(--card-min);
+    gap: 0.75rem;
+  }
+
+  .card--row .card__lead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Stretch the label-and-title group over the whole card and push its two
+     ends apart. That is how .card--tall separates its own kind from its
+     body, so both card types end up with the same vertical rhythm. */
+  .card--row .card__lead:first-child {
+    flex: 1;
+    align-self: stretch;
+    justify-content: space-between;
+  }
+
+  /* A card with no description still renders the wrapper, and an empty flex
+     item earns a gap it does not deserve. */
+  .card--row .card__lead:empty {
+    display: none;
+  }
+
+  .card--row .card__desc {
+    text-align: left;
+  }
 }
 
 @media (max-width: 560px) {
@@ -573,10 +608,6 @@ a.card[data-tone='chalk']:hover {
   }
   .intro--home {
     padding: 3.25rem 0 2.75rem;
-  }
-  .card--row {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
 
