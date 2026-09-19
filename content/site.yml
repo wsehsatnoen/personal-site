@@ -14,9 +14,6 @@ pages:
   resume:
     title: resume
     intro: 
-  contact:
-    title: contact
-    intro: Short intro line for the contact page.
 
 # Shown in the footer. Leave the list empty to hide it.
 # Never put an email address here. Contact runs through the form only.
