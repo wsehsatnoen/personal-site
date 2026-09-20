@@ -34,18 +34,18 @@ Austin, TX
  
 ## PROJECTS
 
-**AI Optimization for Health Rish Assessment** - Python, Matplotlib, SciKit-Learn, Scipy, Pandas | github.com/wsehsatnoen/ai_optimization
+**AI Optimization for Health Rish Assessment** - Python, Matplotlib, SciKit-Learn, Scipy, Pandas | [github.com/wsehsatnoen/ai_optimization](https://www.github.com/wsehsatnoen/ai_optimization)
 - Researched three regression algorithms, selected linear regression for its low variance across a 32-feature dataset, and trained the model to an R2 score of 0.968.
 - Compared seven optimization approaches spanning hyperparameter search, regularization, and ensemble learning, and selected ridge regression as the best performing method.
 - Applied Shapley values to quantify each feature's contribution, identifying heat index as the dominant predictor and four features with no measurable impact.
 - Designed an applied use case at an H-E-B eFulfillment Center, engineering autoregressive lag features to predict daily Cycle Count task volume before the 4:30 pm system generated tasks post.
  
-**Parcel Routing & Delivery Tracker** — Python | github.com/wsehsatnoen/wgups
+**Parcel Routing & Delivery Tracker** — Python | [github.com/wsehsatnoen/wgups](https://www.github.com/wsehsatnoen/wgups)
 - Built a delivery routing program that sequences 40 stops using a nearest-neighbor heuristic and floyd-warshall algorithm, with a command-line interface for querying shipment status and the parcels assigned to each.
 - Created a hash table from scratch, challenged myself to focus on functional programming (FP) instead of traditional object oriented programming (OOP).
 - Application delivers all parcels on time and in only 80% of the allotted milage.
 
-**E-Commerce Backend Service** — Java, Spring Boot, Maven | github.com/wsehsatnoen/ecommerceapp
+**E-Commerce Backend Service** — Java, Spring Boot, Maven | [github.com/wsehsatnoen/ecommerceapp](https://www.github.com/wsehsatnoen/ecommerceapp)
 - Designed a relational data model with seven JPA (Jakarta Persistence API) entities, including a many-to-many relationship between cart items and excursions, and built a transactional checkout endpoint that assembles a customer, cart, and cart items into a single order. Resulting in atomic order creation with a generated UUID tracking number.
 - Used Spring Data REST to generate a full CRUD (Create, Read, Update, Delete) API across seven resources directly from repository interfaces instead of writing boilerplate controllers by hand. Resulting in roughly 35 fewer hand-written endpoint methods while keeping a single hand-written controller for checkout logic the generated API couldn't express.
 
