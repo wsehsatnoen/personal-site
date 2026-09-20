@@ -19,11 +19,10 @@ Austin, TX
 *Innovation Award nominee, Leander eFC, 2026. Rated Exceeds Expectations on annual performance reviews, 2019–2026. Bob-Brandt Customer Service Award, 2020–2025.*
  
 **eFulfillment Center Coordinator** — Leander eFC #4, Corp #00764 | February 2025 – Present
-- Led an end-of-day efficiency kaizen — analyzed 136,705 inventory transactions, built Excel tooling, trained peers, revised SOP — cutting labor hours 30.3%, sustained 11+ weeks.
+- Led an end-of-day efficiency kaizen, analyzed 136,705 inventory transactions, built Excel tooling, trained peers, revised SOP, cutting labor hours 30.3%, sustained 11+ weeks.
 - Drove facility Units Per Partner Hour (UPPH), i.e. payroll, from 65 to the 90 goal by training partners and building tools and SOPs that improved decision-making confidence.
 - Planned and led a six-partner selection zone reset, cutting completion time by 2.5 hours. Designed a plan-o-gram for non-conveyable products, slotting by size, movement, and weight.
-- Established equipment-tracking SOPs to reduce damage and extend equipment life, becoming one of the first facilities on the process.
-- Coordinate daily inbound/outbound workload across automated systems for 80+ warehouse partners on rotating ambient and chilled shifts.
+- Coordinated daily inbound/outbound workload across automated systems for 80+ warehouse partners.
 
 **eFC II Warehouse Associate** — Leander eFC #4 | February 2024 – February 2025
 - Averaged 115% Efficiency Percentage (EP) against facility pick and putaway standards.
