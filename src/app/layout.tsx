@@ -4,6 +4,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { getSite } from '@/lib/content';
 import './globals.css';
+import Script from 'next/script';
 
 const newsreader = Newsreader({
   subsets: ['latin'],
@@ -40,6 +41,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main id="main">{children}</main>
           <SiteFooter name={site.name} links={site.footer.links} />
         </div>
+
+        <script defer src="https://stats.wsehsatnoen.xyz/script.js" data-website-id="85ad824c-e751-4d10-9a81-2fb6dd85729f"></script>
       </body>
     </html>
   );
