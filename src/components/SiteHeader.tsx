@@ -12,9 +12,9 @@ type NavItem = {
 
 const NAV: NavItem[] = [
   { href: 'https://sso.wsehsatnoen.xyz', label: 'sso', external: true, cta: true },
-  { href: '/about', label: 'about' },
-  { href: '/resume', label: 'resume' },
-  { href: '/portfolio', label: 'portfolio' },
+  { href: '/about', label: 'About Me' },
+  { href: '/resume', label: 'Resume' },
+  { href: '/portfolio', label: 'Portfolio' },
 ];
 
 export default function SiteHeader({ name }: { name: string }) {
