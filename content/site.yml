@@ -6,13 +6,13 @@ tagline: Music, computers, climbing, tennis, hiking; you name it, I probably hav
 
 pages:
   about:
-    title: about
+    title: About Me
     intro: To summarize, small town roots, grown on honesty and hard work.
   portfolio:
-    title: portfolio
+    title: Portfolio
     intro: Short intro line for the portfolio page.
   resume:
-    title: resume
+    title: Resume
     intro: 
 
 # Shown in the footer. Leave the list empty to hide it.
