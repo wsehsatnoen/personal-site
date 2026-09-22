@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteFooter name={site.name} links={site.footer.links} />
         </div>
 
-        <script defer src="https://stats.wsehsatnoen.xyz/script.js" data-website-id="85ad824c-e751-4d10-9a81-2fb6dd85729f"></script>
+        <script defer src="https://stats.wsehsatnoen.xyz/script.js" data-website-id="d554f8b7-34ad-437c-8424-80badcee0533"></script>
       </body>
     </html>
   );
