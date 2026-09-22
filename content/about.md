@@ -4,7 +4,7 @@ So a little about me, huh? Well first off, I'm diverse in that I find a lot of t
 
 I grew up in the small town Edna Texas on a ranch with 200 head of cattle. My mother, decendant of rice farmers, one of five sisters and one brother, president of the Jackson County Fair, singer at church, works in telecomunications, but above all, honest and loving. My father, desendant of butchers, one of four brothers and one sister, the brains behind the cattle business, lab analyst, knight of columbus, hard headed, but also hard worker, but just like my mother, honest and loving (in his own special way). 
 
-I am one (youngest and best child) of two brothers and one sister. Brother is an electical technician, sister a nurse with three loud, but loving kids. And I am here in Austin Texas as a coordinator at a warehouse.
+I am one (youngest and best child) of two brothers and one sister. Brother is an electical technician, sister a nurse with three loud, but loving kids. And I am here in Austin Texas as a coordinator for a warehouse.
 
 From the beginning, our parents taught us two simple yet strong morals: honesty and hard work. Those are what we will take with us and cherish forever. 
 
