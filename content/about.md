@@ -12,15 +12,15 @@ Now the scene is set, heres where I fit in. For the county fair, my siblings and
 
 During my time there I was also performing in concerts, operas, traveled the states to compete, and met a lot of people along the way. Music is a big part of my life and will continue to be so. But that chapter came to an end and left me in the chapter I am at now.
 
-I started with HEB during my first bachelors as a simple "bag boy." Hired on the spot, I worked my way up to become a service lead, managing the front end. Spent some time in that roll, picked up projects outside of my duties simply because I wanted to see what I could do to make the store better. 
+I started with HEB during my first bachelors as a simple "bag boy." Hired on the spot, I worked my way up to become a service lead, managing the front end. Spent some time in that role, picked up projects outside of my duties simply because I wanted to see what I could do to make the store better. 
 
 Ended up moving to the eFC in Leander as an eFC Warehouse Associate II to find new oppurtunites there and learn everything I could about HEB warehousing. Found that I loved operations more than service and excelled, moved up quickly to the coordinator position and found many ways that I could engage with our team and improve our processes. 
 
-During that time though, outside of work, I made the bold decission to go back to school and study Computer Science. Started building a few things for school, and tinkering with my raspberry pi and gaming computer out of the interest in exploring the vast world of computers. Now I host my own webpage and am working on a few ideas that I run and host from home! 
+During that time though, outside of work, I made the bold decission to go back to school and study Computer Science. Started building a few things for school, and tinkering with my raspberry pi and gaming computer out of the interest in exploring the vast world of computers. Now I host my own webpage and am working on a few ideas that I run from home! 
 
-For fun though? I really enjoy exploring the world that we have under our feet. My most recent trip was to Glacier National Park, walking along the walled garden, seeing black bears from a distance, sitting on a waterfall, and just taking in what a beauty this world has. Before that, I have also explored state parks here in Texas, went to the Rocky Mountains in Colorado, been to Ireland, Wales, London. Went to South Africa with the family to see Cape Town, Victoria Falls, and a safari with the sound of elephants waking us from our sleep. 
+For fun though? I really enjoy exploring the world that we have under our feet. My most recent trip was to Glacier National Park, walking along the walled garden, seeing black bears from a distance, sitting on a waterfall, and just taking in what a beauty this world has. Before that, I have also explored state parks here in Texas, went to the Rocky Mountains in Colorado, been to Ireland, Wales, London. I also went to South Africa with my family to see Cape Town, Victoria Falls, and a safari with the sound of elephants waking us from our sleep. 
 
-To say the least, I cherish the memories and time that I have been here; from family to friends, new and old, lifelong or temporary. The people that have come and gone will always have a special place with me and I will never forget! 
+To say the least, I cherish the memories I have so far; from family to friends, new and old, lifelong or temporary. The people that have come and gone will always have a special place with me and I will never forget! 
 
 So, you wanted to get to know me? There's my story, and there's a lot more to it. But enough about me, what's yours?
 
