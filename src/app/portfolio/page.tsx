@@ -26,7 +26,7 @@ export default function PortfolioPage() {
 
         {projects.length === 0 && (
           <div className="card card--empty" style={{ '--span': 12 } as React.CSSProperties}>
-            each file in content/projects renders as a card here
+            coming soon!!!
           </div>
         )}
       </div>
