@@ -8,7 +8,7 @@ description: Building an 8-bit breadboard computer from scratch.
 stack:
 link: 
 featured: false   # true renders a wide, olive card
-span: 4           # optional: 4, 5, 6, 7 or 8. Ignored when featured is true.
+span: 3           # optional: 4, 5, 6, 7 or 8. Ignored when featured is true.
 order: 4          # lower numbers sort first
 draft: false
 ---
