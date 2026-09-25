@@ -7,8 +7,8 @@ title: AI Optimization
 description: Using AI to predict the health risk score, then making it better.
 stack:
   - python
-  - sci-kit learn
-link: https://github.com/wsehsatnoen/ai_optimizaiton
+  - scikit-learn
+link: https://github.com/wsehsatnoen/ai_optimization
 featured: false   # true renders a wide, olive card
 span: 3           # optional: 4, 5, 6, 7 or 8. Ignored when featured is true.
 order: 3          # lower numbers sort first
@@ -17,7 +17,7 @@ draft: false
 
 # AI Optimization for Health Risk Assessment
 
-Four tasks built on the same dataset and the same linear regression model. Task One selects and validates the algorithm, Task Two optimizes it, Task Three interprets what the optimized model learned, and Task Four applies it to a new use case. For more detail, visit my github and view the markdown files!
+Four tasks built on the same dataset and the same linear regression model. Task One selects and validates the algorithm, Task Two optimizes it, Task Three interprets what the optimized model learned, and Task Four applies it to a new use case. For more detail, visit my GitHub and view the markdown files!
 
 ## Task One: Research and Select an AI Algorithm
 
@@ -29,18 +29,18 @@ The model is measured on R2 score and Mean Squared Error, producing an R2 of 0.9
 
 ## Task Two: Optimization, Regularization, and Ensemble Methods
 
-The base linear regression model reaches an R2 score of .9677 and a Mean Squared Error of .0147. Because linear regression is a model well researched and optimized, improvement is a matter of fine tuning rather than redesign. Three categories of approach are applied and compared against that control: hyperparameter tuning through RandomizedSearchCV and HalvingRandomSearchCV, regularization through Lasso and Ridge, and ensemble learning through Bagging and AdaBoost. Each is measured on the same two metrics, R2 score and Mean Squared Error.
+The base linear regression model reaches an R2 score of .9677 and a Mean Squared Error of .0147. Because linear regression is a model well researched and optimized, improvement is a matter of fine-tuning rather than redesign. Three categories of approach are applied and compared against that control: hyperparameter tuning through RandomizedSearchCV and HalvingRandomSearchCV, regularization through Lasso and Ridge, and ensemble learning through Bagging and AdaBoost. Each is measured on the same two metrics, R2 score and Mean Squared Error.
 
-Ridge regression performs the best of the seven, at an R2 score of .9688 and a Mean Squared Error of .0141. Lasso performs the worst by a wide margin. The two ensemble techniques score below the base model, which is the expected outcome, as ensemble methods are intended to combine weak learners and linear regression is already a strong stable one.
+Ridge regression performs the best of the seven, at an R2 score of .9688 and a Mean Squared Error of .0141. Lasso performs the worst by a wide margin. The two ensemble techniques score below the base model, which is the expected outcome, as ensemble methods are intended to combine weak learners and linear regression is already a strong, stable one.
 
 ## Task Three: Feature Significance and Model Interpretation
 
 With the model optimized to ridge regression, the next step is to evaluate the significance of each feature and its contribution to the health risk score. Shapley values provide that information.
 
-The heat index is the most important feature by a wide margin, with a mean Shapley value of 0.46, nearly double the next feature. The bee swarm graph shows the effect is not evenly distributed; as the heat index rises, its impact on the prediction increases sharply. At the other end, four features are effectively insignificant: month, no2, precipcover, and pm2.5. The results confirm that heat and humidity drive the health risk score, and they also confirm the limitation raised in Task One, as a linear regression fits a straight line and cannot represent the sudden impact the heat index has at higher values.
+The heat index is the most important feature by a wide margin, with a mean Shapley value of 0.46, nearly double the next feature. The beeswarm graph shows the effect is not evenly distributed; as the heat index rises, its impact on the prediction increases sharply. At the other end, four features are effectively insignificant: month, no2, precipcover, and pm2.5. The results confirm that heat and humidity drive the health risk score, and they also confirm the limitation raised in Task One, as a linear regression fits a straight line and cannot represent the sudden impact the heat index has at higher values.
 
 ## Task Four: New Use Case for the Optimized Model
 
-A new use case for the optimized model is predicting the number of Cycle Count tasks that will be generated for warehouse associates. For context, system generated inventory tasks populate at 4:30 pm each day, and the count is not known until the script runs. Knowing that number beforehand is necessary for operational planning.
+A new use case for the optimized model is predicting the number of Cycle Count tasks that will be generated for warehouse associates. For context, system-generated inventory tasks populate at 4:30 pm each day, and the count is not known until the script runs. Knowing that number beforehand is necessary for operational planning.
 
 Because inventory does not depend on a single day of activity, the features are engineered through autoregression, using a lag of the four previous operational days to match the average shelf life of outbound product. Ridge regression suits this design, as the lagged features introduce multicollinearity and ridge is built to manage it by penalizing large coefficients. The model is measured on the same two metrics as the previous tasks, comparing its daily predictions against the tasks actually generated at 4:30 pm.

@@ -13,7 +13,7 @@ order: 4          # lower numbers sort first
 draft: false
 ---
 
-# Breadboard 8-Bit computer
+# Breadboard 8-Bit Computer
 
 Out of sheer interest, and after admiration of Ben Eater and his 8-bit breadboard computer project, I decided to take the chance and start it myself. For reference, the final project looks as such:
 
@@ -25,7 +25,7 @@ With that, up first is the clock.
 
 ## The Clock
 
-If you read my about me, you know that I have a lot of interests in a lot of different things. Computers are clearly one of them. I am also a firm believer that in order to understand something, build it from the ground up. And so here is the first step.
+If you read my About Me, you know that I have a lot of interests in a lot of different things. Computers are clearly one of them. I am also a firm believer that in order to understand something, build it from the ground up. And so here is the first step.
 
 Something that was a learning curve for me was the electrical terminology, the resistors and capacitors, understanding the pin layout of the 555 timer and how to use it to our advantage, etc. But instead of going into the nitty-gritty, here's some photos of what I was able to put together.
 
@@ -37,11 +37,11 @@ Here's the multi-use of the 555 timers: the top is creating the square wave, the
 
 ![Putting together the square wave](/content_img/555_timers.png)
 
-Next, I had to use a Quad AND gate, Quad OR gate and a hex inverter. I then followed the practice of just using longer wires to get the logic down before making the aesthetic cuts:
+Next, I had to use a Quad AND gate, Quad OR gate, and a hex inverter. I then followed the practice of just using longer wires to get the logic down before making the aesthetic cuts:
 
 ![testing logic](/content_img/testing_logic.png)
 
-Finally, once I got what was needed, I then made necessary cuts and here is the end result from it:
+Finally, once I got what was needed, I then made necessary cuts, and here is the end result from it:
 
 ![Breadboard Clock](/content_img/bb_clock.png) 
 

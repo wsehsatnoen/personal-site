@@ -4,7 +4,7 @@
 # This file stays hidden as long as draft is true.
 
 title: EOD Kaizen
-description: Developed tool for coordinators and leaders to make confident decisions with EOD staffing and operational moves. First built on Excel, transitioning to a full stack web application!
+description: Developed tool for coordinators and leaders to make confident decisions with EOD staffing and operational moves. First built on Excel, transitioning to a full-stack web application!
 stack:
  - excel
 link:

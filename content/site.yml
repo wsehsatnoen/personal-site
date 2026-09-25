@@ -2,15 +2,15 @@
 # Nothing here is design — changing these values will never break the layout.
 
 name: Shane Darilek
-tagline: Music, computers, climbing, tennis, hiking; you name it, I probably have an interest in it. (p.s. hello from my home! this site is hosted from my raspberry pi 5)
+tagline: Music, computers, climbing, tennis, hiking; you name it, I probably have an interest in it. (P.S. Hello from my home! This site is hosted from my Raspberry Pi 5.)
 
 pages:
   about:
     title: About Me
-    intro: To summarize, small town roots, grown on honesty and hard work.
+    intro: To summarize, small-town roots, grown on honesty and hard work.
   portfolio:
     title: Portfolio
-    intro: A work in progress, for now, please refer to my Resume/GitHub for projects!
+    intro: A work in progress; for now, please refer to my Resume/GitHub for projects!
   resume:
     title: Resume
     intro: 

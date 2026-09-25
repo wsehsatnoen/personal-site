@@ -4,7 +4,7 @@
 # This file stays hidden as long as draft is true.
 
 title: WGUPS
-description: Parsel route generator, built from scratch hash table, floyd-warshall, nearest-neighbor.
+description: Parcel route generator, built-from-scratch hash table, Floyd-Warshall, nearest-neighbor.
 stack:
   - python
 link: https://github.com/wsehsatnoen/wgups
@@ -21,8 +21,8 @@ When starting this project, the focus was to develop an understanding of differe
 and Algorithms, hence the name of the class. However, my attempt was to take it slightly further.
 
 
-Because the class is heavily function based, I decided to challenge myself and deviate away from OOP
-(Object-Oriented Programming), and practice FP (Functionality Programming). By doing so, I minimized
+Because the class is heavily function-based, I decided to challenge myself and deviate away from OOP
+(Object-Oriented Programming) and practice FP (Functionality Programming). By doing so, I minimized
 the number of classes that I used down to only 3 (okay, more if you consider the empty bucket/enum classes).
 
 For the purpose of this assignment, that is besides the point, so here is a quick documentation of where everything
@@ -32,7 +32,7 @@ is and how the program flows:
 ### SECTION A
 *THE HASH TABLE*
 
-There are two files that build this: packages.py and hashtable.py. The packages.py file is where the buckets are created
+There are two files that build this: packages.py and hashtable.py. The packages.py file is where the buckets are created,
 and the hashtable.py is what initiates and stores items into a hash table. However, first the items must be hashed (located
 in package.py line 40):
 
@@ -41,7 +41,7 @@ in package.py line 40):
 
 Because each package has a unique ID, there is no need to hash in any other way than a direct hash. 
 
-Now that we have our hash function, the insertion function is on the hashtable.py file starting at line: 47.
+Now that we have our hash function, the insertion function is on the hashtable.py file starting at line 47.
 
     def insert(self, package: Package):
         for i in range(self.size):
@@ -117,7 +117,7 @@ I used my experience working with our systems to develop one that is similar in 
 
 ##### Receiving:
 
-The first thing that needed to happen was receiving each of the packages. That was done simply by using python's CSV reader:
+The first thing that needed to happen was receiving each of the packages. That was done simply by using Python's CSV reader:
 
     def receive_package():
         with open("packages.csv", "r") as csvfile:
@@ -127,12 +127,12 @@ The first thing that needed to happen was receiving each of the packages. That w
                 handle_package(package)
                 wgups_table.insert(package)
 
-Note that first the package is created in the package class, then handled, then inserted into the wpups_table (an instance of
+Note that first the package is created in the package class, then handled, then inserted into the wgups_table (an instance of
 our Hash Table used for this application). This follows the same SOP (standard operating procedure) for traditional 
 warehousing via receive, sort, and putaway. 
 
 The second portion of handling allows for special notes to be taken care of, 
-standardizing data types, and finally sorting the package ID's into specific sets based on specific conditions.
+standardizing data types, and finally sorting the package IDs into specific sets based on specific conditions.
 
     def handle_package(package):
         update_deadline(package)
@@ -155,14 +155,14 @@ separately at the given time they are available, then sorted to their designated
 
 ##### Shipping:
 
-After the packages have been received, sorted, and putaway (inserted into the hash table), now the manifests and routes are 
+After the packages have been received, sorted, and put away (inserted into the hash table), now the manifests and routes are 
 ready to be built. There is a requirement that the total miles traveled does not exceed 140 miles. To combat this, we 
-avoided arriving at a location more than once, so above in receiving you will notice the address_mixer(package) function. 
-Each package ID will not only be placed into a set based on conditions, but will also be paired with others that are to 
+avoided arriving at a location more than once, so, above in Receiving, you will notice the address_mixer(package) function. 
+Each package ID will not only be placed into a set based on conditions but will also be paired with others that are to 
 be delivered at the same address in a dictionary.
 
 With that in mind, our manifest builder is able to build a route via the sets package IDs have been sorted into. Then it will load
-packages that are going to the same address onto that shipment as well (with the 16 package capacity in consideration):
+packages that are going to the same address onto that shipment as well (with the 16-package capacity in consideration):
 
     def build_manifest(packages):
         manifest = {}
@@ -189,7 +189,7 @@ are not attempted to be added to a different manifest.
 Now with the manifest built, the route can be generated. The two algorithms that are used are Nearest Neighbor and Floyd-Warshall.
 The locations and respective matrix between each of the locations is located in the location.py file. 
 
-The map of Salt Lake City, Utah and addresses does not meet triangular inequality, meaning that there are instances of two points where the shortest
+The map of Salt Lake City, Utah, and addresses does not meet triangular inequality, meaning that there are instances of two points where the shortest
 distance between is not a direct connection. This is where Floyd-Warshall's algorithm used to find the shortest distance
 between two addresses and a new matrix with those edges is stored.
 
@@ -204,7 +204,7 @@ between two addresses and a new matrix with those edges is stored.
 
     all_pairs_shortest_path = floyd_warshall(distance_matrix, num_addresses)
 
-With that matrix built, the greedy Nearest Neighbor algorithm can now quickly find a near optimal route:
+With that matrix built, the greedy Nearest Neighbor algorithm can now quickly find a near-optimal route:
 
     def nearest_neighbor(nodes):
 
@@ -268,18 +268,18 @@ where all the algorithms come together to complete the application.
     
     current_time = datetime.time(7, 30)
 
-The first manifest is build via the paired packages and truck two packages. The second is built with the priority set, but does
+The first manifest is build via the paired packages and truck two packages. The second is built with the priority set but does
 not depart until 9:05 to get the delayed packages on board. Then finally, the last shipment is build with the remaining loading
 queue set that will deliver the final packages after truck two and driver 1 arrive back at the hub at 10:25.
 
 ### SECTION D & E
-*THE USER INTERFACE AND SCREENSHOTS
+*THE USER INTERFACE AND SCREENSHOTS*
 
 This one was a little challenging because there are a lot of edge cases that the user could do that could cause errors.
-To prevent those, we kept it simple and robust. There are only four options to choose from, show dashboard to see all the
+To prevent those, we kept it simple and robust. There are only four options to choose from: show dashboard to see all the
 packages and the trucks, change time to add time to the simulation, view a package and its status at a requested time, and exit. 
 The simulation will start at 7:30 am and show all the packages that have been received and sorted and those that are not 
-in facility via Label Created. The routes have already been pre-planned and the purpose of the simulation is to simply 
+in facility via Label Created. The routes have already been pre-planned, and the purpose of the simulation is to simply 
 see the statuses at given times of the day.
 
 Given a time constraint, there is much more that can be added (such as allowing the user to traverse backwards in addition
@@ -294,13 +294,13 @@ Another is, Nearest Neighbor algorithm, in the case used for this application, w
 manifest and continuously return the next nearest neighbor, minimizing the distance traveled. 
 
 After running the application, all packages are delivered to their designation and on time, the number of miles traveled is 112.90 
-miles, and all packages notes are successfully handled (i.e. packages delivered with required packages, truck two packages).
+miles, and all packages notes are successfully handled (i.e., packages delivered with required packages, truck two packages).
 
 There are other algorithms that could have been used for this application that would also meet the requirements:
 
 One which is more complicated is Christofides' algorithm. Christofides' takes a cycle of points and creates a path through 
 each of them that is 1.5 times the optimal solution. [[1]](#1) The complication, however, is it requires that the graph meet triangular 
-inequality, which in our case, it does not. However, that can be fixed simply using Floyd-Warshall to find the shortest 
+inequality, which, in our case, it does not. However, that can be fixed simply using Floyd-Warshall to find the shortest 
 path between all points to instantiate triangular inequality. This one is different from nearest neighbor because it will
 prevent a long return leg.
 
@@ -313,9 +313,9 @@ it will calculate the shortest distance each time the nearest neighbor is run, f
 ### SECTION G
 *WHAT COULD BE DONE DIFFERENTLY*
 
-If given more time, I would have implemented instead sorted packages that are to be delivered with the same Zipcode. The US
-Postal Service has implemented Zipcodes for the benefit of delivery. Instead of only sorting packages that are to be delivered
-to the same address, I would also include packages that are within the same zipcode to prevent multiple trucks traveling
+If given more time, I would have implemented instead sorted packages that are to be delivered with the same ZIP code. The US
+Postal Service has implemented ZIP codes for the benefit of delivery. Instead of only sorting packages that are to be delivered
+to the same address, I would also include packages that are within the same ZIP code to prevent multiple trucks traveling
 in the same area.
 
 ### SECTION H
@@ -330,7 +330,7 @@ The use of the Hash Table is potentially the best option for storing the package
 are the use of a Linked List and a Min-Heap:
 
 The linked list will store the information just as the Hash Table did, and insertion will be optimal due to simply pending 
-at the end of the list. However, retrieval is not given that the Hash Table has a retrieval time complexity of O(1), 
+at the end of the list. However, retrieval is not, given that the Hash Table has a retrieval time complexity of O(1), 
 but the linked list has a time complexity of O(N) for it has to iterate through all the buckets until a match. 
 
 The other option is the Min-Heap. This will be optimal, for it can store packages with a priority near the front of the list, 

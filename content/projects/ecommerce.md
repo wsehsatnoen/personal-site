@@ -4,7 +4,7 @@
 # This file stays hidden as long as draft is true.
 
 title: eCommerce Backend
-description: eCommerce backend built for an angular front end.
+description: eCommerce backend built for an Angular front end.
 stack:
   - java
   - spring
