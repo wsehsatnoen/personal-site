@@ -11,7 +11,6 @@ type NavItem = {
 };
 
 const NAV: NavItem[] = [
-  { href: 'https://sso.wsehsatnoen.xyz', label: 'SSO', external: true, cta: true },
   { href: '/about', label: 'About Me' },
   { href: '/resume', label: 'Resume' },
   { href: '/portfolio', label: 'Portfolio' },
