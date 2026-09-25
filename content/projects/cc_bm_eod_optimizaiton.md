@@ -20,13 +20,9 @@ To preface, here is the operational question: How many partners (H-E-B's word fo
 
 Two leaders and I were pondering that question one evening because we had an opportunity in that area. I took that question and ran with it:
 
-## Part One: Data Collection
+## The Excel Tool
 
-In our SYNQ Intelligence Portal, one report we have is Inventory Transactions. This will tell you every time a bin comes down to a station (a move transaction), all activities done while that bin is at the station, then when the bin leaves the station (another move transaction). Those two move transactions are important because that will tell us how long the partner took with that bin. With that in mind, I began collecting data. This data is extreme because over the course of six months, it grew to a total of 136,705 tasks. With that, I was able to provide the information and tool needed to gauge business needs as mentioned in my resume. Here is how the tool works:
-
-# CC/BM Tool
-
-The CC/BM tool is an Excel workbook that measures how long each CC and BM task takes in the AutoStore at an H-E-B eFC (eFulfillment Center). It works from the inventory transactions exported from SYNQ and breaks the results down by zone, by day, by weekday, and by partner. The two zones are ASA (AutoStore Ambient) and ASC (AutoStore Chilled).
+The CC/BM tool is an Excel workbook that measures how long each CC and BM task takes in the AutoStore at an H-E-B eFC (eFulfillment Center). It works from the inventory transactions exported from SYNQ (our AutoStore inteligence portal) and breaks the results down by zone, by day, by weekday, and by partner. The two zones are ASA (AutoStore Ambient) and ASC (AutoStore Chilled).
 
 ## How the workbook is laid out
 
@@ -51,7 +47,7 @@ Each transaction table has the same six columns. The first three come straight f
 
 The SYNQ export does not have a duration column. What it does have is two transactions for every task, each with its own Create Date. Thus, the time to complete a task is simply the gap between its two timestamps.
 
-Once a table is sorted by From TU, the two transactions for each task sit on back-to-back rows with the later one on top. From there, the workbook pairs rows by position: row 2 with row 3, row 4 with row 5, and so on down the table. The three helper columns do the rest. Each formula below is written the way it appears in the first data row (row 2), so A1 and C1 point at the row above.
+Once a table is sorted by From TU, the two transactions for each task sit on back-to-back rows with the later one on top. From there, the workbook pairs rows by position: row 1 with row 2, row 3 with row 4, and so on down the table. The three helper columns do the rest. Each formula below is written the way it appears in the first data row (row 2), so A1 and C1 point at the row above.
 
 Time To Complete:
 
@@ -81,25 +77,21 @@ Unfortunately, pairing by position is also the most fragile part of the workbook
 
 ## Loading a new period
 
-The workbook holds one period at a time, and loading one takes six steps.
+The workbook holds one period at a time, and loading one takes three steps.
 
 First, export the period's inventory transactions from SYNQ for each of the four tables: ASA CC, ASA BM, ASC CC, and ASC BM. Each export needs the Create Date, From TU, and Updated By columns.
 
-Second, make sure each table will end at the last row of the new data. The easiest way is to delete the old rows as table rows (select the data rows, right-click, and choose Delete, then Table Rows) rather than clearing their contents. Cleared rows stay inside the table, and the formulas treat them as data. The blank copy shows the effect: its tables still span last period's row counts, so ASA Summary reports 13,346 CCs with nothing loaded. If a new period is shorter than the last one, the leftover rows get counted the same way.
+Then, with the three rows necessary, paste those into the respective tables based on task. You then want excel to complete the sorting for you. Sort the create date from latest to oldest, then sort the From TU by ascending. This will allow for each of the TUs to be paired up, and base on the standard that one bin will only get CC'ed or BM'ed once in a day, naturally the tasks start and end time will be paired.
 
-Third, paste each export into its table starting at A2, then sort the table by From TU and then by Create Date (Newest to Oldest). The first level puts each task's two transactions next to each other, and the second keeps the later one on top, which the Time To Complete formula depends on.
+Third, there will be instances where a task only has one create date transaction, or more than two. To save some time, parse through the Time to Complete collumn and search for anything starting in "#." This is where you will find the tasks that have such discrepancies. Do some analyzing and delete the extra or single task's row(s), and search again. Once all have been cleared (which is usually only about one to three tasks) the table is complete and in working order.
 
-Fourth, fill the three helper columns with the formulas above. Typing each formula into row 2 will fill it down the rest of the table.
-
-Fifth, add any new partners to Roster, and make sure Roster_flip has them too. Roster lists Full Name and then User, while Roster_flip lists the same people with the columns swapped, because VLOOKUP can only look to the right. User has to match the partner's ID exactly as it appears in Updated By.
-
-Finally, check the results before anyone reads them. Number of Days of Data on Montly Data should match the number of days loaded, and nothing in Partner Data's name column should show #N/A, which would mean that partner is missing from the roster. Then save the file under the period's name (for example, CC-BM Period 10).
+Once this has been completed for each of the four data tabs, all of the data will populate and be calculated for you.
 
 ## Reading the results
 
 ### ASA Summary and ASC Summary
 
-These two tabs share a layout, one per zone. The block at the top covers the whole period: Number of CCs and Number of BM, Total Days Data, Average Time per Task (labeled Average Time to Complete on the ASC tab), and Average Deviation. Average Deviation is AVEDEV of every task's time, i.e., how far a single task's time lands from the average, on average. In other words, it measures how consistent the tasks are; the smaller it is, the more alike they are.
+These two tabs share a layout, one per zone. The block at the top covers the whole period: Number of CCs and Number of BM, Total Days Data, Average Time per Task, and Average Deviation. Average Deviation is AVEDEV of every task's time, i.e., how far a single task's time lands from the average, on average. In other words, it measures how consistent the tasks are; the smaller it is, the more alike they are.
 
 The daily table starts at row 12 with one row per date. The date column (labeled Day of March) lists every date with at least one CC transaction, oldest first. Columns C and D total the time spent on CC and BM that day, and E and F count the tasks. Because every task is two rows in the export, E and F take the day's row count and divide it by two.
 
