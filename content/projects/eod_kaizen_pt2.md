@@ -4,7 +4,7 @@
 # This file stays hidden as long as draft is true.
 
 title: EOD Kaizen Pt. 2
-description: Following the software engineering pipeline, building the full stack application for the EOD Kaizen made via excel. Utilizing AI modelling as well to provide prodictions!
+description: Following the software engineering pipeline, building the full stack application for the EOD Kaizen made via Excel. Utilizing AI modelling as well to provide predictions!
 stack:
  - java
  - spring
@@ -20,4 +20,4 @@ order: 2          # lower numbers sort first
 draft: false
 ---
 
-Stay tuned as this is a Capstone Project under construction!
+Stay tuned, as this is a Capstone Project under construction!

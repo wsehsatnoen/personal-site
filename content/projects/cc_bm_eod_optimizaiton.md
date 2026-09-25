@@ -4,7 +4,7 @@
 # This file stays hidden as long as draft is true.
 
 title: EOD Kaizen
-description: Developed tool for coordinators and leaders to make confident decisions with EOD staffing and operational moves. First built on excel, transitioning to a full stack web application!
+description: Developed tool for coordinators and leaders to make confident decisions with EOD staffing and operational moves. First built on Excel, transitioning to a full stack web application!
 stack:
  - excel
 link:
@@ -14,15 +14,15 @@ order: 1          # lower numbers sort first
 draft: false
 ---
 
-# Cycle Count and Bin Maintenance Optimizaiton Tool
+# Cycle Count and Bin Maintenance Optimization Tool
 
-To preface, here is the opoerational question: How many partners (H-E-B's word for an employee) do we need at EOD to complete CC (Cycle Counts) and BM (Bin Maintenance) at the end of day?
+To preface, here is the operational question: How many partners (H-E-B's word for an employee) do we need at EOD to complete CC (Cycle Counts) and BM (Bin Maintenance) at the end of day?
 
-Two leaders and I were pondering that quesiton one evening because we had an opportunity in that area. I took that question and ran with it:
+Two leaders and I were pondering that question one evening because we had an opportunity in that area. I took that question and ran with it:
 
 ## Part One: Data Collection
 
-In our SYNQ Intelegence Portal, one report we have is Inventory Transactions. This will tell you every time a bin comes down to a station (a move transaction), all activities done while that bin is at the station, then when the bin leaves the station (another move transaction). Those two move transactions are important because that will tell us how long the partner took with that bin. With that in mind, I began collecting data. This data is extreme because over the course of six months, it grew to a total of 136,705 tasks. With that, I was able to provide the information and tool needed to gauge business needs as mentioned in my resume. Here is how the tool works:
+In our SYNQ Intelligence Portal, one report we have is Inventory Transactions. This will tell you every time a bin comes down to a station (a move transaction), all activities done while that bin is at the station, then when the bin leaves the station (another move transaction). Those two move transactions are important because that will tell us how long the partner took with that bin. With that in mind, I began collecting data. This data is extreme because over the course of six months, it grew to a total of 136,705 tasks. With that, I was able to provide the information and tool needed to gauge business needs as mentioned in my resume. Here is how the tool works:
 
 # CC/BM Tool
 
@@ -269,6 +269,6 @@ The workbook is sized for one period. Past most of these limits, the spilled col
 
 ## Next steps
 
-My next steps are simple in wording. I want to take this excel tooling and convert it to an application that makes a API GET request of the SYNQ data and imports automatically. I want to have a java backend clean and parse the data itself and calculate all the information the excel tool does. Then I want to push that to a front end that is easy to navigate and read, giving the most wanted information in the right spot, at the right time, to the right partner, so that operational leads and coordinators can make even better live decisions to optimize EOD tasks further. 
+My next steps are simple in wording. I want to take this Excel tooling and convert it to an application that makes an API GET request of the SYNQ data and imports automatically. I want to have a Java backend clean and parse the data itself and calculate all the information the Excel tool does. Then I want to push that to a front end that is easy to navigate and read, giving the most wanted information in the right spot, at the right time, to the right partner, so that operational leads and coordinators can make even better live decisions to optimize EOD tasks further. 
 
-Stay tuned as this is my next big project!
+Stay tuned, as this is my next big project!
