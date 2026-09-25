@@ -8,7 +8,7 @@ description: Developed tool for coordinators and leaders to make confident decis
 stack:
   - excel
 link:
-featured: false   # true renders a wide, olive card
+featured: True   # true renders a wide, olive card
 span: 4           # optional: 4, 5, 6, 7 or 8. Ignored when featured is true.
 order: 1          # lower numbers sort first
 draft: false
