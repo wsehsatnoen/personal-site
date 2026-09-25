@@ -4,8 +4,12 @@
 # This file stays hidden as long as draft is true.
 
 title: EOD Kaizen
-description: Developed tool for coordinators and leaders to make confident decisions with EOD staffing and operational moves.
+description: Developed tool for coordinators and leaders to make confident decisions with EOD staffing and operational moves. First built on excel, transitioning to a full stack web application!
 stack:
+ - excel
+ - java
+ - javascipt
+ - sql
 link:
 featured: True   # true renders a wide, olive card
 span: 4           # optional: 4, 5, 6, 7 or 8. Ignored when featured is true.
@@ -268,6 +272,6 @@ The workbook is sized for one period. Past most of these limits, the spilled col
 
 ## Next steps
 
-My next steps are simple in wording. I want to take this excel tooling and convert it to an application that makes a API GET request of the SYNQ data and imports automatically. I want to have a python or java backend clean and parse the data itself and calculate all the information the excel tool does. Then I want to push that to a front end that is easy to navigate and read, giving the most wanted information in the right spot, at the right time, to the right partner, so that operational leads and coordinators can make even better live decisions to optimize EOD tasks further. 
+My next steps are simple in wording. I want to take this excel tooling and convert it to an application that makes a API GET request of the SYNQ data and imports automatically. I want to have a java backend clean and parse the data itself and calculate all the information the excel tool does. Then I want to push that to a front end that is easy to navigate and read, giving the most wanted information in the right spot, at the right time, to the right partner, so that operational leads and coordinators can make even better live decisions to optimize EOD tasks further. 
 
 Stay tuned as this is my next big project!
