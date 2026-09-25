@@ -7,9 +7,6 @@ title: EOD Kaizen
 description: Developed tool for coordinators and leaders to make confident decisions with EOD staffing and operational moves. First built on excel, transitioning to a full stack web application!
 stack:
  - excel
- - java
- - javascipt
- - sql
 link:
 featured: True   # true renders a wide, olive card
 span: 4           # optional: 4, 5, 6, 7 or 8. Ignored when featured is true.
